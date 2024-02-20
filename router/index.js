@@ -1,10 +1,11 @@
 import express from "express";
 import { createHomeController } from "../controller/createHomeMiddleware.js";
+import { homePageFileUpload } from "../util/multer.js";
 
 // init express js router here
 const router = express.Router();
 
-router.get("/", createHomeController)
+router.post("/", homePageFileUpload, createHomeController)
 
 
 // export default router 
