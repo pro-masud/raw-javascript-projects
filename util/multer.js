@@ -4,8 +4,8 @@ import multer from "multer";
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        if(file.fieldname === "developerPhoto"){
-            cb(null, "public/developers");
+        if(file.fieldname === "productPhotos"){
+            cb(null, "public/products");
         }
     },
     filename:(req, file, cb) => {
@@ -13,4 +13,4 @@ const storage = multer.diskStorage({
     }
 });
 
-export const homePageFileUpload = multer({storage}).single("developerPhoto");
+export const homePageFileUpload = multer({storage}).single("productPhotos");
